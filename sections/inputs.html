@@ -186,7 +186,7 @@
           <div class="ui-input-icon">
             <i class="ui-icon ui-icon-search"></i>
             <input class="ui-input" type="search" placeholder="Search..." oninput="this.nextElementSibling.style.display=this.value?'':'none'" id="demo-clearable">
-            <button class="ui-input-icon-right" style="display:none" onclick="const i=this.previousElementSibling;i.value='';i.focus();this.style.display='none'"><i class="ui-icon ui-icon-x"></i></button>
+            <button class="ui-input-icon-right" aria-label="Clear search" style="display:none" onclick="const i=this.previousElementSibling;i.value='';i.focus();this.style.display='none'"><i class="ui-icon ui-icon-x"></i></button>
           </div>
         </div>
         <div class="ui-field">
@@ -201,7 +201,7 @@
           <div class="ui-input-icon">
             <i class="ui-icon ui-icon-lock"></i>
             <input class="ui-input" type="password" placeholder="Enter password">
-            <button class="ui-input-icon-right" onclick="const i=this.previousElementSibling;i.type=i.type==='password'?'text':'password';this.querySelector('i').className=i.type==='password'?'ui-icon ui-icon-eye':'ui-icon ui-icon-eye-off'"><i class="ui-icon ui-icon-eye"></i></button>
+            <button class="ui-input-icon-right" aria-label="Show password" onclick="const i=this.previousElementSibling;i.type=i.type==='password'?'text':'password';this.querySelector('i').className=i.type==='password'?'ui-icon ui-icon-eye':'ui-icon ui-icon-eye-off'"><i class="ui-icon ui-icon-eye"></i></button>
           </div>
         </div>
         <div class="ui-field">
@@ -222,7 +222,7 @@
   &lt;div class="ui-input-icon"&gt;
     &lt;i class="ui-icon ui-icon-search"&gt;&lt;/i&gt;
     &lt;input class="ui-input" type="search" placeholder="Search..."&gt;
-    &lt;button class="ui-input-icon-right"&gt;
+    &lt;button class="ui-input-icon-right" aria-label="Clear search"&gt;
       &lt;i class="ui-icon ui-icon-x"&gt;&lt;/i&gt;
     &lt;/button&gt;
   &lt;/div&gt;
@@ -242,7 +242,7 @@
   &lt;div class="ui-input-icon"&gt;
     &lt;i class="ui-icon ui-icon-lock"&gt;&lt;/i&gt;
     &lt;input class="ui-input" type="password" placeholder="Enter password"&gt;
-    &lt;button class="ui-input-icon-right"&gt;
+    &lt;button class="ui-input-icon-right" aria-label="Show password"&gt;
       &lt;i class="ui-icon ui-icon-eye"&gt;&lt;/i&gt;
     &lt;/button&gt;
   &lt;/div&gt;

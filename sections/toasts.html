@@ -31,6 +31,7 @@ function getToastContainer(position = 'bottom-right') {
     c = document.createElement('div');
     c.id = id;
     c.className = `ui-toast-container ${position}`;
+    c.setAttribute('aria-live', 'polite');
     document.body.appendChild(c);
   }
   return c;
@@ -48,7 +49,7 @@ function showToast(type, message, position) {
   toast.innerHTML = `
     &lt;i class="ui-toast-icon ui-icon ${icons[type]}"&gt;&lt;/i&gt;
     &lt;span class="ui-toast-body"&gt;${message}&lt;/span&gt;
-    &lt;button class="ui-toast-close"
+    &lt;button class="ui-toast-close" aria-label="Dismiss"
       onclick="this.closest('.ui-toast').remove()"&gt;&amp;times;&lt;/button&gt;`;
   getToastContainer(position).appendChild(toast);
   setTimeout(() =&gt; toast.parentNode &amp;&amp; toast.remove(), 4000);

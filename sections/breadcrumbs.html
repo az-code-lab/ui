@@ -3,41 +3,49 @@
 
     <div class="demo-subsection">
       <h3>Default</h3>
-      <ul class="ui-breadcrumb">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Products</a></li>
-        <li><a href="#">Category</a></li>
-        <li>Current page</li>
-      </ul>
+      <nav aria-label="Breadcrumb">
+        <ul class="ui-breadcrumb">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Category</a></li>
+          <li aria-current="page">Current page</li>
+        </ul>
+      </nav>
       <details class="demo-code">
         <summary>Show code</summary>
         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;ul class="ui-breadcrumb"&gt;
-  &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="#"&gt;Products&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="#"&gt;Category&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Current page&lt;/li&gt;
-&lt;/ul&gt;</pre>
+<pre>&lt;nav aria-label="Breadcrumb"&gt;
+  &lt;ul class="ui-breadcrumb"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Products&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Category&lt;/a&gt;&lt;/li&gt;
+    &lt;li aria-current="page"&gt;Current page&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</pre>
       </details>
     </div>
 
     <div class="demo-subsection">
       <h3>With icons</h3>
-      <ul class="ui-breadcrumb">
-        <li><a href="#"><i class="ui-icon ui-icon-home"></i></a></li>
-        <li><a href="#">Settings</a></li>
-        <li><a href="#">Account</a></li>
-        <li>Security</li>
-      </ul>
+      <nav aria-label="Breadcrumb">
+        <ul class="ui-breadcrumb">
+          <li><a href="#"><i class="ui-icon ui-icon-home"></i></a></li>
+          <li><a href="#">Settings</a></li>
+          <li><a href="#">Account</a></li>
+          <li aria-current="page">Security</li>
+        </ul>
+      </nav>
       <details class="demo-code">
         <summary>Show code</summary>
         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;ul class="ui-breadcrumb"&gt;
-  &lt;li&gt;&lt;a href="#"&gt;&lt;i class="ui-icon ui-icon-home"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="#"&gt;Settings&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="#"&gt;Account&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Security&lt;/li&gt;
-&lt;/ul&gt;</pre>
+<pre>&lt;nav aria-label="Breadcrumb"&gt;
+  &lt;ul class="ui-breadcrumb"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;i class="ui-icon ui-icon-home"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Settings&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Account&lt;/a&gt;&lt;/li&gt;
+    &lt;li aria-current="page"&gt;Security&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</pre>
       </details>
     </div>
   </div>

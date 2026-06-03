@@ -891,7 +891,7 @@
     font-size: var(--ui-font-size);
     color: var(--ui-text);
     line-height: var(--ui-line-height);
-    z-index: 200;
+    z-index: var(--ui-z-popover);
     opacity: 0;
     visibility: hidden;
     transition: opacity var(--ui-transition), transform var(--ui-transition),
@@ -1213,6 +1213,10 @@
         radial-gradient(circle at 0.8125rem 0.1875rem, var(--ui-text-muted) 0.1875rem, transparent 0.1875rem),
         radial-gradient(circle at 1.4375rem 0.1875rem, var(--ui-text-muted) 0.1875rem, transparent 0.1875rem);
       animation: ui-chat-typing 1.2s ease infinite;
+
+      @media (prefers-reduced-motion: reduce) {
+        animation: none;
+      }
     }
   }
 

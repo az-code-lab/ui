@@ -10,10 +10,10 @@
         <summary>Show code</summary>
         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 <pre>&lt;div class="ui-dialog-backdrop" id="demo-dialog"&gt;
-  &lt;div class="ui-dialog"&gt;
+  &lt;div class="ui-dialog" role="dialog" aria-modal="true" aria-labelledby="demo-dialog-title"&gt;
     &lt;div class="ui-dialog-header"&gt;
-      &lt;h3 class="ui-dialog-title"&gt;Confirm action&lt;/h3&gt;
-      &lt;button class="ui-dialog-close" onclick="closeDialog('demo-dialog')"&gt;&amp;times;&lt;/button&gt;
+      &lt;h3 class="ui-dialog-title" id="demo-dialog-title"&gt;Confirm action&lt;/h3&gt;
+      &lt;button class="ui-dialog-close" aria-label="Close" onclick="closeDialog('demo-dialog')"&gt;&amp;times;&lt;/button&gt;
     &lt;/div&gt;
     &lt;div class="ui-dialog-body"&gt;
       &lt;p style="margin:0;"&gt;Are you sure you want to proceed? This action cannot be undone.&lt;/p&gt;
@@ -60,10 +60,10 @@ document.addEventListener('keydown', e =&gt; {
         <summary>Show code</summary>
         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 <pre>&lt;div class="ui-dialog-backdrop" id="demo-dialog-lg"&gt;
-  &lt;div class="ui-dialog lg"&gt;
+  &lt;div class="ui-dialog lg" role="dialog" aria-modal="true" aria-labelledby="demo-dialog-lg-title"&gt;
     &lt;div class="ui-dialog-header"&gt;
-      &lt;h3 class="ui-dialog-title"&gt;Edit profile&lt;/h3&gt;
-      &lt;button class="ui-dialog-close" onclick="closeDialog('demo-dialog-lg')"&gt;&amp;times;&lt;/button&gt;
+      &lt;h3 class="ui-dialog-title" id="demo-dialog-lg-title"&gt;Edit profile&lt;/h3&gt;
+      &lt;button class="ui-dialog-close" aria-label="Close" onclick="closeDialog('demo-dialog-lg')"&gt;&amp;times;&lt;/button&gt;
     &lt;/div&gt;
     &lt;div class="ui-dialog-body"&gt;
       &lt;div class="ui-stack sm"&gt;
@@ -112,10 +112,10 @@ function closeDialog(id) {
       <details class="demo-code" data-live-target="native-dialog">
         <summary>Show code</summary>
         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;dialog class="ui-dialog" id="native-dialog"&gt;
+<pre>&lt;dialog class="ui-dialog" id="native-dialog" aria-labelledby="native-dialog-title"&gt;
   &lt;div class="ui-dialog-header"&gt;
-    &lt;h3 class="ui-dialog-title"&gt;Native Dialog&lt;/h3&gt;
-    &lt;button class="ui-dialog-close" onclick="closeNativeDialog()"&gt;&amp;times;&lt;/button&gt;
+    &lt;h3 class="ui-dialog-title" id="native-dialog-title"&gt;Native Dialog&lt;/h3&gt;
+    &lt;button class="ui-dialog-close" aria-label="Close" onclick="closeNativeDialog()"&gt;&amp;times;&lt;/button&gt;
   &lt;/div&gt;
   &lt;div class="ui-dialog-body"&gt;
     &lt;p style="margin:0;"&gt;This uses the native &amp;lt;dialog&amp;gt; element with showModal(). It gets a browser-provided backdrop and focus trapping for free.&lt;/p&gt;

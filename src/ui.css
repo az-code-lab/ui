@@ -124,6 +124,9 @@
 
   --ui-select-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2364748b' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
 
+  /* --- Controls --- */
+  --ui-toggle-knob: #fff;
+
   /* --- Typography --- */
   --ui-font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --ui-font-mono: ui-monospace, "Cascadia Code", "Fira Code", monospace;
@@ -132,6 +135,13 @@
 
   /* --- Transitions --- */
   --ui-transition: 150ms ease;
+
+  /* --- Stacking order --- */
+  --ui-z-dropdown: 100;
+  --ui-z-tooltip: 200;
+  --ui-z-popover: 200;
+  --ui-z-modal: 1000;
+  --ui-z-toast: 9999;
 
 }
 
@@ -1168,7 +1178,7 @@
       left: 0.1875rem;
       width: 1rem;
       height: 1rem;
-      background: #fff;
+      background: var(--ui-toggle-knob);
       border-radius: 50%;
       box-shadow: var(--ui-shadow-sm);
       transition: transform var(--ui-transition), background var(--ui-transition);
@@ -1869,7 +1879,7 @@
     border-radius: var(--ui-radius);
     box-shadow: var(--ui-shadow-lg);
     padding: 0.25rem;
-    z-index: 100;
+    z-index: var(--ui-z-dropdown);
     display: none;
     opacity: 0;
     transform: translateY(-0.25rem);
@@ -2048,7 +2058,7 @@
     border-radius: var(--ui-radius);
     box-shadow: var(--ui-shadow-lg);
     padding: 0.25rem;
-    z-index: 100;
+    z-index: var(--ui-z-dropdown);
     display: none;
   }
 
@@ -2469,7 +2479,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
+  z-index: var(--ui-z-modal);
   opacity: 0;
   visibility: hidden;
   transition: opacity var(--ui-transition), visibility var(--ui-transition);
@@ -2913,6 +2923,19 @@ dialog.ui-dialog {
 }
 
 /* ============================================
+   Utility: text & background colors
+   ============================================ */
+
+.ui-text-primary   { color: var(--ui-primary); }
+.ui-text-secondary { color: var(--ui-secondary); }
+.ui-text-success   { color: var(--ui-success); }
+.ui-text-danger    { color: var(--ui-danger); }
+.ui-text-warning   { color: var(--ui-warning); }
+.ui-text-muted     { color: var(--ui-text-muted); }
+
+.ui-bg-subtle { background: var(--ui-bg-subtle); }
+
+/* ============================================
    Status dots
    ============================================ */
 
@@ -2944,6 +2967,10 @@ dialog.ui-dialog {
   /* Pulse animation */
   &.pulse {
     animation: ui-pulse 1.5s ease-in-out infinite;
+
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
   }
 
   /* Sizes */
@@ -3159,7 +3186,7 @@ dialog.ui-dialog {
     opacity: 0;
     transition: opacity var(--ui-transition), transform var(--ui-transition);
     transition-delay: var(--ui-tooltip-delay);
-    z-index: 200;
+    z-index: var(--ui-z-tooltip);
   }
 
   &:hover::after,
@@ -3318,7 +3345,7 @@ dialog.ui-dialog {
 
 .ui-toast-container {
   position: fixed;
-  z-index: 9999;
+  z-index: var(--ui-z-toast);
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -3380,6 +3407,10 @@ dialog.ui-dialog {
   font-size: var(--ui-font-size);
   pointer-events: auto;
   animation: ui-toast-in 0.25s ease;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
 
   &.success {
     border-left: 3px solid var(--ui-success);
@@ -3499,6 +3530,10 @@ dialog.ui-dialog {
 
     &.animated {
       animation: ui-progress-stripes 1s linear infinite;
+
+      @media (prefers-reduced-motion: reduce) {
+        animation: none;
+      }
     }
   }
 
@@ -3537,6 +3572,10 @@ dialog.ui-dialog {
   background: var(--ui-bg-subtle);
   border-radius: var(--ui-radius);
   animation: ui-skeleton-pulse 1.5s ease-in-out infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
 
   &.text {
     height: 0.875rem;

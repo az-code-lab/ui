@@ -53,7 +53,10 @@ function toggleDropdown(id) {
 
 function switchTab(tabsId, index) {
   const tabs = document.getElementById(tabsId);
-  tabs.querySelectorAll('.ui-tab-list .ui-tab').forEach((t, i) => t.classList.toggle('active', i === index));
+  tabs.querySelectorAll('.ui-tab-list .ui-tab').forEach((t, i) => {
+    t.classList.toggle('active', i === index);
+    t.setAttribute('aria-selected', i === index);
+  });
   tabs.querySelectorAll('.ui-tab-panel').forEach((p, i) => p.classList.toggle('active', i === index));
 }
 

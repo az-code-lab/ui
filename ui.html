@@ -929,6 +929,7 @@
         c = document.createElement('div');
         c.id = id;
         c.className = 'ui-toast-container' + (pos === 'bottom-right' ? '' : ' ' + pos);
+        c.setAttribute('aria-live', 'polite');
         document.body.appendChild(c);
       }
       return c;
@@ -939,7 +940,7 @@
       const { icon, text } = toastMessages[type];
       const toast = document.createElement('div');
       toast.className = 'ui-toast ' + type;
-      toast.innerHTML = '<i class="ui-toast-icon ui-icon ' + icon + '"></i><span class="ui-toast-body">' + text + '</span><button class="ui-toast-close" onclick="this.closest(\'.ui-toast\').remove()">&times;</button>';
+      toast.innerHTML = '<i class="ui-toast-icon ui-icon ' + icon + '"></i><span class="ui-toast-body">' + text + '</span><button class="ui-toast-close" aria-label="Dismiss" onclick="this.closest(\'.ui-toast\').remove()">&times;</button>';
       container.appendChild(toast);
       setTimeout(() => { if (toast.parentNode) toast.remove(); }, 4000);
     };
